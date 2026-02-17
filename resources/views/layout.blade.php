@@ -24,11 +24,23 @@
 
     <div class="container mt-4">
         @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         @endif
 
         @yield('content')
     </div>
+
+    <footer class="bg-dark text-white mt-5 p-4 text-center">
+        <div class="container">
+            &copy; {{ date('Y') }} Collège Maisonneuve. Tous droits réservés.
+            <br>
+            <a href="#" class="text-white text-decoration-underline">Politique de confidentialité</a> |
+            <a href="#" class="text-white text-decoration-underline">Contact</a>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
